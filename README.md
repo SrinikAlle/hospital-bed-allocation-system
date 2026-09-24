@@ -1,88 +1,89 @@
 # Hospital Bed Allocation System
 
-A Java-based academic project designed to organize hospital bed information and support clearer, more efficient bed-allocation decisions.
+A responsive hospital operations dashboard that demonstrates **constraint-based bed allocation** as a student project.
 
-> **Project status:** Under development. The repository structure and documentation are being prepared before the full source code is added.
+## Features
 
-## Overview
+- Live bed board with Available, Occupied, Reserved, and Maintenance states
+- Search and ward filtering
+- Patient registration
+- Waiting-patient allocation queue
+- Constraint-based bed matching
+- ICU, isolation, ward, gender, and availability checks
+- Bed release/discharge workflow
+- Allocation activity log
+- Responsive desktop/mobile interface
 
-Hospitals need a clear way to track bed availability, patient allocation, and changing occupancy levels. This project focuses on creating a simple system that can help organize bed-related data and present it in an easy-to-understand format.
+## Allocation Logic
 
-The goal is to combine **Java programming, structured data handling, and visualization** in one practical project.
+The prototype checks five hard constraints before assigning a bed:
 
-## Objectives
+1. The bed is available
+2. Ward/care type is compatible
+3. Gender restriction is compatible
+4. ICU requirement is satisfied
+5. Isolation requirement is satisfied
 
-- Maintain structured hospital bed information
-- Track available and occupied beds
-- Support patient-to-bed allocation
-- Reduce confusion caused by manual tracking
-- Present allocation data clearly
-- Provide a foundation for future analytics and dashboard features
-
-## Planned Features
-
-- Add and manage hospital bed records
-- View available and occupied beds
-- Allocate beds based on availability
-- Update bed status when patients are admitted or discharged
-- Search and filter allocation records
-- Display simple summaries and visualizations
-- Keep the interface easy to understand for demonstrations and academic review
+This is a **CSP-inspired rule-based prototype**. It does not use a trained machine-learning model and is not intended for real clinical deployment.
 
 ## Tech Stack
 
-- **Language:** Java
-- **Concepts:** Object-Oriented Programming, Data Handling
-- **Visualization:** Java-based charts / graphical representation
-- **Development Environment:** VS Code
-- **Version Control:** Git & GitHub
+- React 19
+- TypeScript
+- Vite
+- Lucide React
+- Sonner notifications
+- Express for serving the production build
+
+## Run Locally
+
+Prerequisites: Node.js 20+ and npm.
+
+    git clone https://github.com/SrinikAlle/hospital-bed-allocation-system.git
+    cd hospital-bed-allocation-system
+    npm install
+    npm run dev
+
+Open the local URL shown by Vite, normally http://localhost:3000.
+
+## Production Build
+
+    npm run build
+    npm start
 
 ## Project Structure
 
-The source-code structure will be documented here after the implementation files are uploaded.
+    client/
+      src/
+        App.tsx
+        Home.tsx
+        main.tsx
+        styles.css
+      index.html
+    server/
+      index.ts
+    package.json
+    tsconfig.json
+    vite.config.ts
 
-```text
-hospital-bed-allocation-system/
-├── src/
-├── assets/
-├── data/
-└── README.md
-```
+## Current Limitations
 
-## How It Works
-
-1. Hospital bed details are entered into the system.
-2. The system keeps track of each bed's current status.
-3. Available beds can be assigned when needed.
-4. Allocation information is updated as hospital activity changes.
-5. Summary information can be displayed for easier monitoring.
+- Data is stored only in browser memory
+- No authentication or database yet
+- No real hospital-system integration
+- Allocation uses deterministic rules rather than ML
 
 ## Future Improvements
 
-- Database integration
-- Authentication and role-based access
-- Real-time bed-status updates
-- Advanced analytics dashboard
-- Department-wise bed management
-- Cloud deployment
-- Mobile-friendly interface
-
-## Learning Outcomes
-
-This project is being developed to strengthen practical understanding of:
-
-- Java application development
-- Object-Oriented Programming
-- Data organization
-- Problem solving
-- Data visualization
-- Git and GitHub workflow
+- Persistent database storage
+- Authentication and user roles
+- Priority-aware scheduling
+- Allocation history and reporting
+- Backend validation/API
+- Automated tests
+- Deployment pipeline
 
 ## Author
 
 **Srinik Alle**  
 Data Science Student | AI · Full-Stack · Flutter Developer
-
----
-
-If you are reviewing this repository, please note that the full implementation is currently being prepared and will be added as the project develops.
