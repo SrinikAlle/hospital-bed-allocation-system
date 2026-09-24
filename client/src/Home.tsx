@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import {
   Activity,
   AlertTriangle,
@@ -390,7 +390,7 @@ export default function Home() {
   );
 }
 
-function Metric({ label, value, note, icon }: { label: string; value: number; note: string; icon: React.ReactNode }) {
+function Metric({ label, value, note, icon }: { label: string; value: number; note: string; icon: ReactNode }) {
   return (
     <article className="metric">
       <span className="metricIcon">{icon}</span>
