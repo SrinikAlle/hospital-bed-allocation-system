@@ -2,6 +2,10 @@
 
 A responsive hospital operations dashboard that demonstrates **constraint-based bed allocation** as a student project.
 
+## Dashboard Preview
+
+![Hospital Bed Allocation Dashboard](assets/dashboard-preview.jpg)
+
 ## Features
 
 - Live bed board with Available, Occupied, Reserved, and Maintenance states
